@@ -1,0 +1,124 @@
+body {
+    font-family: 'Inter', sans-serif;
+}
+
+.section-title {
+    font-size: 2.25rem; /* Equivalent to text-4xl */
+    font-weight: 700; /* Equivalent to font-bold */
+    text-align: center; /* Equivalent to text-center */
+    margin-bottom: 3rem; /* Equivalent to mb-12 */
+    position: relative; /* Equivalent to relative */
+    padding-bottom: 0.5rem; /* Equivalent to pb-2 */
+}
+
+.section-title::after {
+    content: '';
+    display: block; /* Equivalent to block */
+    width: 5rem; /* Equivalent to w-20 */
+    height: 0.25rem; /* Equivalent to h-1 */
+    background-color: #84cc16; /* Equivalent to bg-lime-400 */
+    margin-left: auto; /* Equivalent to mx-auto (part 1) */
+    margin-right: auto; /* Equivalent to mx-auto (part 2) */
+    margin-top: 0.5rem; /* Equivalent to mt-2 */
+    border-radius: 9999px; /* Equivalent to rounded-full */
+}
+/* --- Corrected Section Title Styles (Fixing @apply) --- */
+body {
+    font-family: 'Inter', sans-serif;
+    /* The colors are typically set by Tailwind classes on the <body> tag in HTML */
+}
+
+.section-title {
+    font-size: 2.25rem;     /* Equivalent to text-4xl */
+    font-weight: 700;       /* Equivalent to font-bold */
+    text-align: center;     /* Equivalent to text-center */
+    margin-bottom: 3rem;    /* Equivalent to mb-12 */
+    position: relative;     /* Equivalent to relative */
+    padding-bottom: 0.5rem; /* Equivalent to pb-2 */
+}
+
+.section-title::after {
+    content: '';
+    display: block;         /* Equivalent to block */
+    width: 5rem;            /* Equivalent to w-20 */
+    height: 0.25rem;        /* Equivalent to h-1 */
+    background-color: #84cc16; /* Equivalent to bg-lime-400 */
+    margin-left: auto;      /* Equivalent to mx-auto */
+    margin-right: auto;     /* Equivalent to mx-auto */
+    margin-top: 0.5rem;     /* Equivalent to mt-2 */
+    border-radius: 9999px;  /* Equivalent to rounded-full */
+}
+
+/* --- Modal & Gallery Styles (Standard CSS) --- */
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.95);
+    animation: fadeIn 0.3s ease;
+}
+.modal.show {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+.modal-content {
+    position: relative;
+    width: 95%;
+    max-width: 1200px;
+    animation: slideIn 0.3s ease;
+    /* Added base styles for visibility against a dark background */
+    background-color: #18181b; 
+    padding: 2.5rem;
+    border-radius: 0.75rem;
+}
+@keyframes slideIn {
+    from {
+        transform: translateY(-50px);
+        opacity: 0;
+    }
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+.close-btn {
+    position: absolute;
+    top: 20px;
+    right: 25px;
+    color: #84cc16;
+    font-size: 40px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: color 0.3s;
+    z-index: 1001;
+    line-height: 1;
+}
+.close-btn:hover {
+    color: #ffffff;
+}
+/* ... The rest of the gallery styles you provided ... */
+.horizontal-gallery {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 24px;
+    padding: 40px;
+    background: #27272a;
+    border-radius: 12px;
+}
+@media (max-width: 768px) {
+    .horizontal-gallery {
+        grid-template-columns: 1fr;
+        gap: 16px;
+        padding: 24px;
+    }
+}
+/* ... (All .gallery-card styles) ... */
